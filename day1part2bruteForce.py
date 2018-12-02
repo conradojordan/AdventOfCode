@@ -9,7 +9,7 @@ file = open('input.txt')
 frequencyChanges = file.read()
 frequencyChangesList = map(int, frequencyChanges.split())
 
-# Initialize some variables
+# Variables initialization
 currentFrequency = 0
 frequencyList = [currentFrequency]
 foundDuplicate = 0
