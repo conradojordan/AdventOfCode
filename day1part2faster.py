@@ -1,4 +1,4 @@
-## Brute force solution for part 2 of day 1
+## Significantly faster solution for part 2 of day 1
 
 # Saves initial time for execution time computing
 import time
