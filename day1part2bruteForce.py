@@ -1,4 +1,5 @@
-# Brute force solution for part 2 of day 1
+## Brute force solution for part 2 of day 1
+
 # Saves initial time for execution time computing
 import time
 startTime = time.time()
