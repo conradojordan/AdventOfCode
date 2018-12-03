@@ -8,7 +8,7 @@ claimsList = file.read().strip().split('\n')
 fabric = np.zeros((1000,1000))
 overlapped = 0
 
-# Transforms the claims in 5 lists (cid, xo, yo, dx and dy) for easier use
+# Parses the claims into 5 lists (cid, xo, yo, dx and dy) for easier use
 cid, xo, yo, dx, dy = [[], [], [], [], []]
 for claim in claimsList:
     claimSplit = claim.split()
