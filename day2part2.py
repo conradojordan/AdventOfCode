@@ -1,6 +1,7 @@
 # Opens file and saves box IDs in a list
 file = open('input.txt')
 idList = file.read().split()
+file.close()
 
 # Searches for box IDs with only 1 letter difference (and saves index of letter)
 for firstBox in idList:
