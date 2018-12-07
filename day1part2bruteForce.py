@@ -7,6 +7,7 @@ startTime = time.time()
 # Opens input file and saves frequency changes in a list
 file = open('input.txt')
 frequencyChanges = file.read()
+file.close()
 frequencyChangesList = map(int, frequencyChanges.split())
 
 # Variables initialization
