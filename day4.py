@@ -1,18 +1,12 @@
 import re
 
-# Receives record, returns month*43200 + day*1440 + hour*60 + minutes (total minutes)
-def totalMinutes (rec):
-    return int(rec[6:8])*43200 + int(rec[9:11])*1440 + int(rec[12:14])*60 + int(rec[15:17])
-
 # Opens file and saves records in a list
 file = open('input.txt')
 allRecords = file.read()
 file.close()
 records = allRecords.strip().split('\n')
 
-# Sort the records chronologically
-sortedRecords = sorted(records, key=totalMinutes)
-
+records.sort()
 
 guardMinutes = {}
 guardNumRegex = re.compile(r'#(\d+)')
@@ -21,7 +15,7 @@ asleepRegex = re.compile(r'falls asleep')
 # Creating dictionary
 # guardMinutes { guard1: {minute1: times, minute2:times}, guard2: {minute1: times} }
 
-for record in sortedRecords:
+for record in records:
     guardNum = guardNumRegex.findall(record)
     asleep = asleepRegex.findall(record)
     if (len(guardNum) == 1):
