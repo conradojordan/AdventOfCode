@@ -3,6 +3,7 @@ import numpy as np
 # Opens file and saves claims in a list
 file = open('input.txt')
 claimsList = file.read().strip().split('\n')
+file.close()
 
 # Creates matrix with zeros
 fabric = np.zeros((1000,1000))
