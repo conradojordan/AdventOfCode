@@ -1,6 +1,7 @@
 # Opens file and saves box IDs in a list
 file = open('input.txt')
 idList = file.read().split()
+file.close()
 
 frequencies = {2: 0, 3: 0}
 
