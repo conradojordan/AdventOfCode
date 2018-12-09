@@ -37,7 +37,7 @@ for c in coord:
 # associated to the points inside the square.
 # Checks all the areas that touch the border of the square, these areas will be infinite.
 areas = defaultdict(int)
-infiniteAreas = defaultdict(int)
+infiniteAreas = set()
 
 for coordinateX in range(xMin, xMax+1):
     for coordinateY in range(yMin, yMax+1):
@@ -55,10 +55,10 @@ for coordinateX in range(xMin, xMax+1):
         if (not tied):
             areas[minDistIndex] += 1
             if ((coordinateX == xMin) or (coordinateX == xMax) or (coordinateY == yMin) or (coordinateY == yMax)):
-                infiniteAreas[minDistIndex] = 0
+                infiniteAreas.add(minDistIndex)
 
 # Remove points with infinite areas from the dictionary
-for point in infiniteAreas.keys():
+for point in infiniteAreas:
     del areas[point]
 
 # Finds maximum area and point associated
