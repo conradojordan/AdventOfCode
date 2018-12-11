@@ -23,22 +23,22 @@ print('allSteps = ' + str(allSteps))
 print('\n')
 print('\n')
 
-while (len(allSteps) > 0):
+while len(allSteps) > 0:
     noReqs = []
     stepsToRemove = []
     for step in allSteps:
-        if (step not in stepsReq):
+        if step not in stepsReq:
             noReqs.append(step)
-    print('noReques = ' + str(noReqs))
+    print('noReqs = ' + str(noReqs))
     nextStep = sorted(noReqs)[0]
     stepsInOrder.append(nextStep)
     for step in stepsReq:
         if nextStep in stepsReq[step]:
             stepsReq[step].discard(nextStep)
-            if (len(stepsReq[step]) == 0):
+            if len(stepsReq[step]) == 0:
                 stepsToRemove.append(step)
     for removed in stepsToRemove:
-        if (removed in stepsReq):
+        if removed in stepsReq:
             del stepsReq[removed]
     allSteps.discard(nextStep)
     print('stepsReq = ' + str(stepsReq))
